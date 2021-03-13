@@ -86,20 +86,21 @@ var quotes = [
 
 let timer;
 
-// generates a random number, assigns it to a variable, then uses it to return a random object from the quotes array
-function getRandomQuote() {
-    let randomQuote = Math.floor(Math.random() * quotes.length);
 
-    return quotes[randomQuote];
+function getRandomQuote() {
+    var today = new Date();
+	var dd = String(today.getDate()).padStart(2, '0');
+	today = dd
+    return quotes[today];
 }
 
 
-// assigns a setInterval method to the variable so that the printQuote function will automatically run after 10 seconds
+
 function startTimer() {
     timer = setInterval(printQuote, 1000 * 60 * 60 * 24);
 }
 
-// clears the setInterval method from the timer variable
+
 function clearTimer() {
     clearInterval(timer);
 }
