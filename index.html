@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Affirmations</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<style>
+body {
+  text-align: center;
+  color: black;
+  font-family: 'Georgia', serif;
+}
+#container {
+	border: #e6e6e6 solid 1px;
+	width: 250px;
+	font-size: 18px;
+}
+#quote-box {
+}
+
+.quote {
+  font-size: 12px;
+  padding-bottom: 2px;
+  } 
+.quote:before, .quote:after {
+  font-size: 12px;
+}
+.quote:before {
+  content: "“";
+}
+.quote:after {
+  content: " ”";
+}
+
+}
+</style>
+<body>
+  <div id="container">
+		<p><b>DAILY AFFIRMATION</b></p>
+    <div id="quote-box">
+      <p class="quote">I welcome challenge, obstacles, and opportunities to grow.</p>
+			</div>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>
+<script>
+var quotes = [
+    {quote:"I accept the good that is flowing into my life."},
+	  {quote:"All of my problems have solutions."},
+    {quote:"I forgive myself for my past mistakes."},
+		{quote:"I have an unshakeable belief in my abilities."},
+		{quote: "I am worthy of love, kindness, and respect."},
+		{quote: "I fully approve of who I am in this moment."},
+		{quote: "Happiness exists where I choose to look for it."},
+		{quote: "I make choices that are healthy and good for me."},
+		{quote: "I am in touch with my inner guidance."},
+		{quote: "I have a right to speak and live my truth."},
+		{quote: "I am strong and courageous because I know God is with me in every moment."},
+		{quote: "I allow myself to be who I am without judgement."},
+		{quote: "I am open to letting go of all attachments."},
+		{quote: "I am grateful for the challenges that helped me to become who I am."},
+		{quote: "I am proud of my achievements and will continue to succeed."},
+		{quote: "I am completely at peace."},
+		{quote: "I have the potential to heal completely."},
+		{quote: "My body knows how I can get better."},
+		{quote: "I live in the present and am confident in the future."},
+		{quote: "I love change and easily adjust to new conditions."},
+		{quote: "I exude confidence when I go out in the world and others see it in me."},
+		{quote: "I believe in the woman I am becoming."},
+		{quote: "I have the power to create change."},
+		{quote: "I am free of worry and regret."},
+		{quote: "I am pursuing a life that feels good to me."},
+		{quote: "I am grateful for how far I have already come, and I am becoming better and better with each passing day."},
+		{quote: "However my life unfolds, I was built to bear it."},
+		{quote: "I use the time I have in a way that is in line with my values and goals."},
+		{quote: "My work is a self-transformative process that brings me inner peace, proper health, and prosperity."},
+		{quote: "I am the source of my happiness and love."},
+		{quote: "I love and respect my female body; I am my body, and I love who I am."}
+		 
+];
+
+let timer;
+
+// generates a random number, assigns it to a variable, then uses it to return a random object from the quotes array
+function getRandomQuote() {
+    let randomQuote = Math.floor(Math.random() * quotes.length);
+
+    return quotes[randomQuote];
+}
+
+
+// assigns a setInterval method to the variable so that the printQuote function will automatically run after 10 seconds
+function startTimer() {
+    timer = setInterval(printQuote, 1000 * 60 * 60 * 24);
+}
+
+// clears the setInterval method from the timer variable
+function clearTimer() {
+    clearInterval(timer);
+}
+
+function printQuote() {
+
+    let currentQuote = getRandomQuote();
+    let html = "<p class='quote'> " + currentQuote.quote + "</p>";
+
+    document.getElementById("quote-box").innerHTML = html;
+
+    clearTimer();
+    startTimer();
+}
+
+
+printQuote();
+</script>
+</html>
