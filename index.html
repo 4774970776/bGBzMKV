@@ -89,9 +89,8 @@ let timer;
 
 function getRandomQuote() {
     var today = new Date();
-	var dd = String(today.getDate()).padStart(2, '0');
-	today = dd
-    return quotes[today];
+	var dd = today.getDate();
+    return quotes[dd];
 }
 
 
